@@ -1,0 +1,18 @@
+.Footer {
+	color: black;
+	padding: 10px 11%;
+	background: #f9f9f9;
+	display:flex;
+}
+
+.Footer {
+	justify-content: space-between;
+}
+
+.Footer div a{
+	color: black;
+}
+
+.Footer div ul, .Footer div li{
+	list-style:none
+}
