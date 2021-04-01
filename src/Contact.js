@@ -17,7 +17,6 @@ function Contact() {
 			message:  message
 		})
 
-		console.log(name, ' || ', message)
 		setName('')
 		setMessage('')
 

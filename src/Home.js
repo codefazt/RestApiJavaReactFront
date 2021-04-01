@@ -16,15 +16,15 @@ function Home() {
 					<h2>El Cafe Ayuda A Desarrollar</h2> 
 				</div>
 				<div className="home__content__cluster">
-					<div class="cafe1">
+					<div className="cafe1">
 					</div>
-					<div class="cafe2">
+					<div className="cafe2">
 					</div>
-					<div class="cafe3">
+					<div className="cafe3">
 					</div>
-					<div class="cafe4">
+					<div className="cafe4">
 					</div>
-					<div class="cafe5">
+					<div className="cafe5">
 					</div>
 	
 				</div>
