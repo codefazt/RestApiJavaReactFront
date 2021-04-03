@@ -11,7 +11,7 @@ function Header(){
 				
 				<div className="header__nav">
 					<nav>
-						<a href="/"> Github </a>
+						<a href="https://github.com/ElGocho/" target='_blank' rel='noreferrer'> Github </a>
 						<a href="/contact"> Contacto </a>
 					</nav>
 				</div>

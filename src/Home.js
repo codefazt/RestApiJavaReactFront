@@ -1,8 +1,36 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import axios from 'axios'
+import {useState} from 'react'
 import './Home.css'
 
 
 function Home() {
+	
+	const [imgs,setImgs] = useState([]);
+
+	useEffect(
+		() => {
+			const load = async (e) => {
+		
+				axios.get('http://localhost:8080/images',{},{
+					headers: {
+						'Content-type':'application/json'
+					}
+				}).then( (resp) =>{
+					var data = resp.data
+		
+					if(data != null ) 
+						setImgs(data)
+
+				}).catch( (resp) => console.error(resp))
+				
+			}		
+
+			load()
+		}, {}
+	)
+
+
 	return (
 		<div className="Home"> 
 			<div className="home__banner" >
@@ -16,17 +44,13 @@ function Home() {
 					<h2>El Cafe Ayuda A Desarrollar</h2> 
 				</div>
 				<div className="home__content__cluster">
-					<div class="cafe1">
-					</div>
-					<div class="cafe2">
-					</div>
-					<div class="cafe3">
-					</div>
-					<div class="cafe4">
-					</div>
-					<div class="cafe5">
-					</div>
-	
+					{ 
+						imgs.map( (data,index) =>{ 
+							return <div className={"cafe ("+index+").jpg"}  key={data.src +"."+index}> 
+										<img src={"/"+data.src} alt={data.alt} title={data.title} />
+									</div> 
+						}) 
+					}
 				</div>
 			</div>
 		</div>
