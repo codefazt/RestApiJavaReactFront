@@ -14,22 +14,20 @@ function Home() {
 		
 				axios.get('http://localhost:8080/images',{},{
 					headers: {
-						'Content-type':'application/json',
-						'Access-Control-Allow-Origin' : '*',
-						'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+						'Content-type':'application/json'
 					}
 				}).then( (resp) =>{
 					var data = resp.data
 		
-		
-					setImgs(data)
+					if(data != null ) 
+						setImgs(data)
+
 				}).catch( (resp) => console.error(resp))
 				
 			}		
 
 			load()
-		}
-		,{}
+		}, {}
 	)
 
 
@@ -48,8 +46,8 @@ function Home() {
 				<div className="home__content__cluster">
 					{ 
 						imgs.map( (data,index) =>{ 
-							return <div className={"cafe ("+index+").jpg"} > 
-										<img src={data.src} alt={data.alt} title={data.title} />
+							return <div className={"cafe ("+index+").jpg"}  key={data.src +"."+index}> 
+										<img src={"/"+data.src} alt={data.alt} title={data.title} />
 									</div> 
 						}) 
 					}
