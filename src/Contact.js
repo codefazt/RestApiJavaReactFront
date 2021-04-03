@@ -87,8 +87,6 @@ function Contact() {
 				<ToastContainer></ToastContainer>
 			</div>
 
-			{component}
-
 		</div>
 	)
 }
